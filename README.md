@@ -187,18 +187,3 @@ CREATE TABLE posts (
     http://localhost:8000
     ```
 
----
-
-## 📥 Download
-
-[Download Full Framework - Rafael](sandbox:/mnt/data/mvc-framework-orm-final.zip)
-
----
-
-## 💬 Need Help?
-
-Let me know if you'd like me to:
-- Provide a **Postman Collection**.
-- Write a **deployment guide for VPS/shared hosting**.
-- Add **sample frontend (HTML/JS) to consume this API**.
-
