@@ -11,12 +11,14 @@ class RegisterController extends Controller {
 
         if (empty($input['username']) || empty($input['password']) || empty($input['email'])) {
             $this->jsonResponse(['message' => 'Username, email, and password are required'], 400);
+            return;
         }
 
         $users = $this->loadUsers();
 
         if (isset($users[$input['username']])) {
             $this->jsonResponse(['message' => 'Username already exists'], 400);
+            return;
         }
 
         $role = $input['role'] ?? 'user';  // Default role is "user"
@@ -36,7 +38,6 @@ class RegisterController extends Controller {
         // In a real system, send an email with the verification link
         $verificationLink = "http://localhost/verify-email?token=$verificationToken";
 
-        // Normally you'd send this via email, but for this demo, we just return it in the response
         $this->jsonResponse([
             'message' => 'User registered successfully, please verify your email',
             'verification_link' => $verificationLink

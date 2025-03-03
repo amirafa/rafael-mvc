@@ -17,7 +17,6 @@ class VerifyController extends Controller {
         foreach ($users as $username => $userData) {
             if (isset($userData['verification_token']) && $userData['verification_token'] === $token) {
                 
-                // Check if email is empty
                 if (empty($userData['email'])) {
                     $this->jsonResponse(['message' => 'Email address not found for this user'], 400);
                     return;
